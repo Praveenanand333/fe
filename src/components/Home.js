@@ -19,7 +19,7 @@ const Home = () => {
     const token = localStorage.getItem('token');
     const body = { token };
 
-    const response = await fetch(`http://localhost:5000/tokencheck`, {
+    const response = await fetch(`https://be-quxr.onrender.com/tokencheck`, {
       method: "POST",
       headers: {
         "Content-type": "application/json"

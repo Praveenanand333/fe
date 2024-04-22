@@ -27,7 +27,7 @@ const StaffRegister = () => {
     e.preventDefault();
     try{
       const body = {teacher_id,teacher_name,password,email};
-      const response = await fetch(`http://localhost:5000/registerstaff`,{
+      const response = await fetch(`https://be-quxr.onrender.com/registerstaff`,{
         method: "POST",
         headers:{
           "Content-type":"application/json"

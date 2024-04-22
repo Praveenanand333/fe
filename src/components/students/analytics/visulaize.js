@@ -11,7 +11,7 @@ function Visualization() {
     const [gpa, setGpa] = useState(null);
     useEffect(() => {
        userRef.current=localStorage.getItem('rollnumber')
-            axios.get(`http://localhost:5000/getgpa/${userRef.current}`)
+            axios.get(`https://be-quxr.onrender.com/getgpa/${userRef.current}`)
             .then(response => {
                 if (response.data) {
                     setGpa(response.data);
@@ -31,7 +31,7 @@ function Visualization() {
         const selectedSemester = event.target.value;
         setSem(selectedSemester);
 
-        axios.get(`http://localhost:5000/basicacademic/${userRef.current}`)
+        axios.get(`https://be-quxr.onrender.com/basicacademic/${userRef.current}`)
             .then(response => {
                 if (response.data) {
                     setbasicacademic(response.data);
@@ -44,7 +44,7 @@ function Visualization() {
                 console.log(error);
             });
 
-        axios.get(`http://localhost:5000/getsemestermarks/${userRef.current}/${selectedSemester}`)
+        axios.get(`https://be-quxr.onrender.com/getsemestermarks/${userRef.current}/${selectedSemester}`)
             .then(response => {
                 if (response.data) {
                     console.log("marks=",response.data);

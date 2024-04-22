@@ -8,7 +8,7 @@ function Teacher() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/session', {
+                const response = await axios.get('https://be-quxr.onrender.com/session', {
                     withCredentials: true // Ensure cookies are sent with the request
                 });
                 const data = response.data;

@@ -12,7 +12,7 @@ useEffect(() => {
   // Delete session if present
   const deleteSession = async () => {
     try {
-      await axios.get('http://localhost:5000/delete-session', { withCredentials: true });
+      await axios.get('https://be-quxr.onrender.com/delete-session', { withCredentials: true });
     } catch (error) {
       console.error('Error deleting session:', error);
     }
@@ -25,7 +25,7 @@ useEffect(() => {
 
     // Send username, password, and role to backend for authentication using Axios
     try {
-      const response = await axios.post('http://localhost:5000/login', {
+      const response = await axios.post('https://be-quxr.onrender.com/login', {
         username,
         password,
         role

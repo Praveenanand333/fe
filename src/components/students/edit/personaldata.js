@@ -30,7 +30,7 @@ function EditStudentPersonal() {
     useEffect(() => {
         const fetchStudentDetails = async () => {
             try {
-                const studentResponse = await axios.get(`http://localhost:5000/studentDetails/${fetchedUsername}`);
+                const studentResponse = await axios.get(`https://be-quxr.onrender.com/studentDetails/${fetchedUsername}`);
                
 
                 if (studentResponse.data) {
@@ -76,7 +76,7 @@ function EditStudentPersonal() {
         e.preventDefault();
         try {
             if (studentData.RollNumber) {
-                const response = await axios.put(`http://localhost:5000/updateStudentDetails/${studentData.RollNumber}`, studentData);
+                const response = await axios.put(`https://be-quxr.onrender.com/updateStudentDetails/${studentData.RollNumber}`, studentData);
                 console.log('Student data updated successfully:', response.data);
                 //setSuccessMessage('Student data updated successfully');
                 toast.success("Student Data Updated Successfully",{
@@ -84,7 +84,7 @@ function EditStudentPersonal() {
                     position:'top-center'
                 });
             } else {
-                const response1 = await axios.post(`http://localhost:5000/addStudentDetails/${fetchedUsername}`, studentData);
+                const response1 = await axios.post(`https://be-quxr.onrender.com/addStudentDetails/${fetchedUsername}`, studentData);
                 console.log('Student data added successfully:', response1.data,fetchedUsername);
                 toast.success("Student Data Added Successfully",{
                     autoClose:2500,
@@ -106,7 +106,7 @@ const handleFile=(e)=>{
 const handleUpload=(e)=>{
 const formdata=new FormData();
 formdata.append('image',file);
-axios.post(`http://localhost:5000/upload/${studentData.RollNumber}`,formdata)
+axios.post(`https://be-quxr.onrender.com/upload/${studentData.RollNumber}`,formdata)
 .then(res=>{
     if(res.data.status === 'Success'){
         console.log("succeed");
@@ -135,7 +135,7 @@ axios.post(`http://localhost:5000/upload/${studentData.RollNumber}`,formdata)
                     <div className='form-master'>
                         <div className='form-fragment-left'>
                             <div className='img-container'>
-                                <img className='prof-pic' width='300px' src={`http://localhost:5000/getImage/${studentData.RollNumber}`} alt='img'/>
+                                <img className='prof-pic' width='300px' src={`https://be-quxr.onrender.com/getImage/${studentData.RollNumber}`} alt='img'/>
                             </div>
                             <br/>
                             <label className="custom-file-upload">

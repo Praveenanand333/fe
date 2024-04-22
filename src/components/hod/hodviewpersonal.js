@@ -11,7 +11,7 @@ function Hodviewpersonal() {
     };
 
     const fetchStudentDetails = () => {
-        axios.get(`http://localhost:5000/studentDetails/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/studentDetails/${rollNumber}`)
             .then(response => {
                 if (response.data) {
                     const formattedStudentDetails = {
@@ -58,7 +58,7 @@ function Hodviewpersonal() {
                 {studentDetails && (
                     <>
                     <center>
-                   <img className='prof-pic' width={'300px'} src={`http://localhost:5000/getImage/${studentDetails.RollNumber}`} alt='img'/>
+                   <img className='prof-pic' width={'300px'} src={`https://be-quxr.onrender.com/getImage/${studentDetails.RollNumber}`} alt='img'/>
                    </center>
                    <center>
                     <div className='view-form'>

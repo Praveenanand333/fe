@@ -14,14 +14,14 @@ function Teacheranalytics() {
         setRollNumber(event.target.value);
     };
     useEffect(() => {
-        axios.get('http://localhost:5000/session')
+        axios.get('https://be-quxr.onrender.com/session')
             .then(response => {
                 userRef.current = response.data.username;
             })
             .catch(error => {
                 console.log(error);
             });
-            axios.get(`http://localhost:5000/getgpa/${rollNumber}`)
+            axios.get(`https://be-quxr.onrender.com/getgpa/${rollNumber}`)
             .then(response => {
                 if (response.data) {
                     setGpa(response.data);
@@ -43,7 +43,7 @@ function Teacheranalytics() {
         const selectedSemester = event.target.value;
         setSem(selectedSemester);
 
-        axios.get(`http://localhost:5000/basicacademic/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/basicacademic/${rollNumber}`)
             .then(response => {
                 if (response.data) {
                     setbasicacademic(response.data);
@@ -56,7 +56,7 @@ function Teacheranalytics() {
                 console.log(error);
             });
 
-        axios.get(`http://localhost:5000/getsemestermarks/${rollNumber}/${selectedSemester}`)
+        axios.get(`https://be-quxr.onrender.com/getsemestermarks/${rollNumber}/${selectedSemester}`)
             .then(response => {
                 if (response.data) {
                     console.log("marks=",response.data);

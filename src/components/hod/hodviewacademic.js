@@ -19,7 +19,7 @@ function Hodviewacademic(){
         setRollNumber(event.target.value);
     };
     const fetchdata = () => {
-        axios.get(`http://localhost:5000/basicacademic/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/basicacademic/${rollNumber}`)
         .then(response => {
             if (response.data) {
                 setbasicacademic(response.data);
@@ -31,7 +31,7 @@ function Hodviewacademic(){
         .catch(error => {
             console.log(error);
         })
-        axios.get(`http://localhost:5000/getsemestermarks/${rollNumber}/${sem}`)
+        axios.get(`https://be-quxr.onrender.com/getsemestermarks/${rollNumber}/${sem}`)
         .then(response => {
             if(response.data){
                 setMarks(response.data);
@@ -43,7 +43,7 @@ function Hodviewacademic(){
         .catch(err => {
             console.log(err);
         })
-       axios.get(`http://localhost:5000/getsemestergpa/${rollNumber}/${sem}`)
+       axios.get(`https://be-quxr.onrender.com/getsemestergpa/${rollNumber}/${sem}`)
        .then(response => {
     
         setgpa(response.data);
@@ -52,7 +52,7 @@ function Hodviewacademic(){
         console.log(err);
         })
 
-       axios.get(`http://localhost:5000/getverifystatus/${rollNumber}/${sem}`)
+       axios.get(`https://be-quxr.onrender.com/getverifystatus/${rollNumber}/${sem}`)
        .then(response => {
         if(response.data.allVerified==1){
             setverifiedstatus(true);
@@ -80,7 +80,7 @@ function Hodviewacademic(){
     },[sem])
    
     const Approve=() => {
-        axios.get(`http://localhost:5000/approve/${rollNumber}/${sem}`)
+        axios.get(`https://be-quxr.onrender.com/approve/${rollNumber}/${sem}`)
         .then(response => {
             setverifiedstatus(true);
             alert("Marks are approved")
@@ -90,7 +90,7 @@ function Hodviewacademic(){
         })
     }
     const unApprove=()=>{
-        axios.get(`http://localhost:5000/unapprove/${rollNumber}/${sem}`)
+        axios.get(`https://be-quxr.onrender.com/unapprove/${rollNumber}/${sem}`)
         .then(response => {
             setverifiedstatus(false);
             alert("Marks are unapproved")

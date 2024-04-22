@@ -30,7 +30,7 @@ const StaffData = () => {
   const getData = async (email) => {
     setIsStaffClicked(true) 
     const body = {email}
-    const response = await fetch(`http://localhost:5000/staff-get-data`, {
+    const response = await fetch(`https://be-quxr.onrender.com/staff-get-data`, {
         method: "POST",
         headers: {
           "Content-type": "application/json"
@@ -44,7 +44,7 @@ const StaffData = () => {
 
   useEffect(() => {
     const fetchStaffData = async() => {
-      const response = await fetch(`http://localhost:5000/get-stafflist`,{
+      const response = await fetch(`https://be-quxr.onrender.com/get-stafflist`,{
         method: "GET",
         headers: {
           "Content-type": "application/json"
@@ -59,7 +59,7 @@ const StaffData = () => {
   useEffect(() => {
     const handleSearchStaff = async() => {
       const teacher_name = searchStaff;
-      const response = await fetch(`http://localhost:5000/search-stafflist`,{
+      const response = await fetch(`https://be-quxr.onrender.com/search-stafflist`,{
         method: "POST",
         headers: {
           "Content-type": "application/json"
@@ -74,7 +74,7 @@ const StaffData = () => {
 
   useEffect(() => {
     const handleRoom = async(value) => {
-      const response = await fetch(`http://localhost:5000/get-staff-data`,{
+      const response = await fetch(`https://be-quxr.onrender.com/get-staff-data`,{
         method: "POST",
         headers: {
           "Content-type": "application/json"

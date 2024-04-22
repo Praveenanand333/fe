@@ -36,7 +36,7 @@ const StudentLogin = () => {
             autoClose:2500,
             position:'top-center'
         });
-        const response = await fetch(`http://localhost:5000/forgotpassword`,{
+        const response = await fetch(`https://be-quxr.onrender.com/forgotpassword`,{
             method:"POST",
             headers: {
                 "Content-Type": "application/json"
@@ -53,7 +53,7 @@ const StudentLogin = () => {
         try{
             const body = {email,rollnumber,password};
             console.log(body)
-            const response = await fetch(`http://localhost:5000/loginstudent`,{
+            const response = await fetch(`https://be-quxr.onrender.com/loginstudent`,{
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"

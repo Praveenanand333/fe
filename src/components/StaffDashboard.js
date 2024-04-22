@@ -46,7 +46,7 @@ const StaffDashboard = () => {
   
   const handleView = async() => {
     const body = isClicked;
-    const response = await fetch(`http://localhost:5000/attendance-view`,{
+    const response = await fetch(`https://be-quxr.onrender.com/attendance-view`,{
       method:"POST",
       headers:{
         "Content-type":"application/json"
@@ -120,7 +120,7 @@ const handleAbsentSubmit = async(e) => {
   const body = {presentStudentData,absentStudentData,numofhours,getdate}
   console.log(body)
 
-  const response = await fetch(`http://localhost:5000/attendance1`,{
+  const response = await fetch(`https://be-quxr.onrender.com/attendance1`,{
     method:"POST",
     headers: {
       "Content-type": "application/json"
@@ -165,7 +165,7 @@ const handleTemp = (data) => {
       const subject_name = obj.subject_name;
       const dates = obj.dates;
       console.log("Date",dates[0].attendance_status)
-      const res = await fetch(`http://localhost:5000/getstudentemail`,{
+      const res = await fetch(`https://be-quxr.onrender.com/getstudentemail`,{
         method:"POST",
         headers:{
           "Content-type":"application/json"
@@ -187,7 +187,7 @@ const handleTemp = (data) => {
       console.log(mail)
       data1.push(mail)
 
-      const response = await fetch(`http://localhost:5000/sendmail`,{
+      const response = await fetch(`https://be-quxr.onrender.com/sendmail`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -219,7 +219,7 @@ const handleTemp = (data) => {
     const body = { selectedStudentsData, notSelectedStudentsData, numofhours,getdate };
     console.log(body)
     console.log("Roomdata",roomdata)
-    const response = await fetch(`http://localhost:5000/attendance`, {
+    const response = await fetch(`https://be-quxr.onrender.com/attendance`, {
       method: "POST",
       headers: {
         "Content-type": "application/json"
@@ -255,7 +255,7 @@ const handleTemp = (data) => {
   useEffect(() => {
     const fetchResults = async() => {
       const body = {email,subjectcode};
-      const response = await fetch(`http://localhost:5000/search/${searchRoll}`,{
+      const response = await fetch(`https://be-quxr.onrender.com/search/${searchRoll}`,{
         method:"POST",
         headers:{
           "Content-type":"application/json"
@@ -272,7 +272,7 @@ const handleTemp = (data) => {
   useEffect(() => {
     const fetchResults = async() => {
       const body = {email, searchCode}
-      const response = await fetch(`http://localhost:5000/staff-search-data`, {
+      const response = await fetch(`https://be-quxr.onrender.com/staff-search-data`, {
         method: "POST",
         headers: {
           "Content-type": "application/json"
@@ -289,7 +289,7 @@ const handleTemp = (data) => {
   useEffect(() => {
     const getData = async () => {
       const body = { email };
-      const response = await fetch(`http://localhost:5000/staff-get-data`, {
+      const response = await fetch(`https://be-quxr.onrender.com/staff-get-data`, {
         method: "POST",
         headers: {
           "Content-type": "application/json"
@@ -305,7 +305,7 @@ const handleTemp = (data) => {
   useEffect(() => {
     const handleRoom = async (value) => {
       value.email = email;
-      const response = await fetch(`http://localhost:5000/get-staff-data`, {
+      const response = await fetch(`https://be-quxr.onrender.com/get-staff-data`, {
         method: "POST",
         headers: {
           "Content-type": "application/json"

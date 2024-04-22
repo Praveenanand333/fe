@@ -34,7 +34,7 @@ function EditStudentAcademic() {
        
                 userRef.current = localStorage.getItem('rollnumber')
 
-                axios.get(`http://localhost:5000/basicacademic/${userRef.current}`)
+                axios.get(`https://be-quxr.onrender.com/basicacademic/${userRef.current}`)
                     .then(response => {
                         if (response.data) {
                             setBasicAcademic(response.data);
@@ -50,7 +50,7 @@ function EditStudentAcademic() {
                         console.log(error);
                     });
 
-                axios.get(`http://localhost:5000/getsemestermarks/${userRef.current}/${sem}`)
+                axios.get(`https://be-quxr.onrender.com/getsemestermarks/${userRef.current}/${sem}`)
                     .then(response => {
                         if (response.data) {
                             setMarks(response.data);
@@ -61,7 +61,7 @@ function EditStudentAcademic() {
                     .catch(err => {
                         console.log(err);
                     });
-                    axios.get(`http://localhost:5000/getsemestergpa/${userRef.current}/${sem}`)
+                    axios.get(`https://be-quxr.onrender.com/getsemestergpa/${userRef.current}/${sem}`)
                     .then(response => {
                  
                      setgpa(response.data);
@@ -69,7 +69,7 @@ function EditStudentAcademic() {
                     .catch(err => {
                         console.log(err);
                     });
-                    axios.post(`http://localhost:5000/calculategpa/${userRef.current}/${sem}`)
+                    axios.post(`https://be-quxr.onrender.com/calculategpa/${userRef.current}/${sem}`)
                     .then(response => {
                      console.log('gpa',response.data);
                      setgpa(response.data.gpa);
@@ -86,10 +86,10 @@ function EditStudentAcademic() {
             alert('Marks should be between 0 and 100');
             return;
         }
-        axios.put(`http://localhost:5000/editmarks/${userRef.current}/${subjectID}`, { marks: newMarks })
+        axios.put(`https://be-quxr.onrender.com/editmarks/${userRef.current}/${subjectID}`, { marks: newMarks })
             .then(response => {
                 console.log('Marks edited successfully');
-                axios.get(`http://localhost:5000/getsemestermarks/${userRef.current}/${sem}`)
+                axios.get(`https://be-quxr.onrender.com/getsemestermarks/${userRef.current}/${sem}`)
                     .then(response => {
                         if (response.data) {
                             setMarks(response.data);
@@ -108,10 +108,10 @@ function EditStudentAcademic() {
 
     const handleEditGrade = (subjectID, newGrade) => {
        
-        axios.put(`http://localhost:5000/editgrade/${userRef.current}/${subjectID}`, { grade: newGrade })
+        axios.put(`https://be-quxr.onrender.com/editgrade/${userRef.current}/${subjectID}`, { grade: newGrade })
             .then(response => {
                 console.log('Marks edited successfully');
-                axios.get(`http://localhost:5000/getsemestermarks/${userRef.current}/${sem}`)
+                axios.get(`https://be-quxr.onrender.com/getsemestermarks/${userRef.current}/${sem}`)
                     .then(response => {
                         if (response.data) {
                             setMarks(response.data);
@@ -131,7 +131,7 @@ function EditStudentAcademic() {
         // Make API call to edit basic academic details
         if(tenthMarks<=100 && higherSecondaryMarks<=100 && tenthMarks>=0 && higherSecondaryMarks>=0 && cutoff>=0 && cutoff <=200){
 
-        axios.put(`http://localhost:5000/editbasicacademic/${userRef.current}`, {
+        axios.put(`https://be-quxr.onrender.com/editbasicacademic/${userRef.current}`, {
             CurrentSemester: semester,
             TenthMarks: tenthMarks,
             HigherSecondaryMarks: higherSecondaryMarks,
@@ -169,7 +169,7 @@ function EditStudentAcademic() {
         
     };
     const handlegpa=()=>{
-        axios.post(`http://localhost:5000/calculategpa/${userRef.current}/${sem}`)
+        axios.post(`https://be-quxr.onrender.com/calculategpa/${userRef.current}/${sem}`)
                     .then(response => {
                      console.log('gpa',response.data.gpa);
                    

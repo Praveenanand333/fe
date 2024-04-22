@@ -14,7 +14,7 @@ const CreateRoom = () => {
         const sendData = async () => {
             if (extractedData) {
                 try {
-                    const response = await fetch(`http://localhost:5000/create-room`, {
+                    const response = await fetch(`https://be-quxr.onrender.com/create-room`, {
                         method: "POST",
                         headers: {
                             "Content-type": "application/json"

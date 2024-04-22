@@ -13,7 +13,7 @@ const CustomCard = ({type, details, onClick }) => {
         </div>
 
         <div className='card-personal'>
-            <img src={`http://localhost:5000/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
+            <img src={`https://be-quxr.onrender.com/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
             <div className='card-personal-text'>
                 <p>Name : {details.Name}</p>
                 <p>Reg No : {details.roll_number}</p>
@@ -34,7 +34,7 @@ const CustomCard = ({type, details, onClick }) => {
         </div>
 
         <div className='card-personal'>
-            <img src={`http://localhost:5000/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
+            <img src={`https://be-quxr.onrender.com/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
             <div className='card-personal-text'>
                 <p>Name : {details.Name}</p>
                 <p>Reg No : {details.roll_number}</p>
@@ -54,7 +54,7 @@ const CustomCard = ({type, details, onClick }) => {
         </div>
 
         <div className='card-personal'>
-            <img src={`http://localhost:5000/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
+            <img src={`https://be-quxr.onrender.com/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
             <div className='card-personal-text'>
                 <p>Name : {details.Name}</p>
                 <p>Reg No : {details.roll_number}</p>
@@ -74,7 +74,7 @@ const CustomCard = ({type, details, onClick }) => {
         </div>
 
         <div className='card-personal'>
-            <img src={`http://localhost:5000/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
+            <img src={`https://be-quxr.onrender.com/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
             <div className='card-personal-text'>
                 <p>Name : {details.Name}</p>
                 <p>Reg No : {details.roll_number}</p>
@@ -94,7 +94,7 @@ const CustomCard = ({type, details, onClick }) => {
         </div>
 
         <div className='card-personal'>
-            <img src={`http://localhost:5000/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
+            <img src={`https://be-quxr.onrender.com/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
             <div className='card-personal-text'>
                 <p>Name : {details.Name}</p>
                 <p>Reg No : {details.roll_number}</p>
@@ -114,7 +114,7 @@ const CustomCard = ({type, details, onClick }) => {
         </div>
 
         <div className='card-personal'>
-            <img src={`http://localhost:5000/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
+            <img src={`https://be-quxr.onrender.com/getImage/${details.roll_number}`} alt={"IMAGE NOT FOUND"} className="card-image" />
             <div className='card-personal-text'>
                 <p>Name : {details.Name}</p>
                 <p>Reg No : {details.roll_number}</p>

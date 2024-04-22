@@ -17,7 +17,7 @@ function ViewStudentAcademic(){
        
             userRef.current = localStorage.getItem('rollnumber');
 
-        axios.get(`http://localhost:5000/basicacademic/${userRef.current}`)
+        axios.get(`https://be-quxr.onrender.com/basicacademic/${userRef.current}`)
         .then(response => {
             if (response.data) {
                 setbasicacademic(response.data);
@@ -29,7 +29,7 @@ function ViewStudentAcademic(){
         .catch(error => {
             console.log(error);
         })
-        axios.get(`http://localhost:5000/getsemestermarks/${userRef.current}/${sem}`)
+        axios.get(`https://be-quxr.onrender.com/getsemestermarks/${userRef.current}/${sem}`)
         .then(response => {
             if(response.data){
                 setMarks(response.data);
@@ -41,7 +41,7 @@ function ViewStudentAcademic(){
         .catch(err => {
             console.log(err);
         })
-       axios.get(`http://localhost:5000/getsemestergpa/${userRef.current}/${sem}`)
+       axios.get(`https://be-quxr.onrender.com/getsemestergpa/${userRef.current}/${sem}`)
        .then(response => {
         console.log('sem gpa',response.data);
         setgpa(response.data);

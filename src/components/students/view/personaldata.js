@@ -12,7 +12,7 @@ function ViewStudentPersonal() {
        
                 const username = localStorage.getItem('rollnumber')
                 
-                axios.get(`http://localhost:5000/studentDetails/${username}`)
+                axios.get(`https://be-quxr.onrender.com/studentDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                            
@@ -55,7 +55,7 @@ function ViewStudentPersonal() {
                 {studentDetails && (
                     <>
                     <center>
-                   <img className='prof-pic' width={'300px'} src={`http://localhost:5000/getImage/${studentDetails.RollNumber}`} alt='img'/>
+                   <img className='prof-pic' width={'300px'} src={`https://be-quxr.onrender.com/getImage/${studentDetails.RollNumber}`} alt='img'/>
                    </center>
                    <center>
                     <div className='view-form'>

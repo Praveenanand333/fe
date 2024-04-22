@@ -19,7 +19,7 @@ function Hodviewother(){
     };
     const fetchStudentDetails = (event) => {
         const username = rollNumber;
-        axios.get(`http://localhost:5000/InternshipDetails/${username}`)
+        axios.get(`https://be-quxr.onrender.com/InternshipDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -34,7 +34,7 @@ function Hodviewother(){
                         console.error('Error fetching Internship details:', error);
                     });
 
-                    axios.get(`http://localhost:5000/ScholarshipDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/ScholarshipDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -48,7 +48,7 @@ function Hodviewother(){
                     .catch(error => {
                         console.error('Error fetching Scholarship details:', error);
                     });
-                    axios.get(`http://localhost:5000/ProjectDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/ProjectDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -62,7 +62,7 @@ function Hodviewother(){
                     .catch(error => {
                         console.error('Error fetching Project details:', error);
                     });
-                    axios.get(`http://localhost:5000/SportsDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/SportsDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log("sports",response.data);
@@ -76,7 +76,7 @@ function Hodviewother(){
                     .catch(error => {
                         console.error('Error fetching Sports details:', error);
                     });
-                    axios.get(`http://localhost:5000/ExamDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/ExamDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -91,7 +91,7 @@ function Hodviewother(){
                         console.error('Error fetching Exams details:', error);
                     });
 
-                    axios.get(`http://localhost:5000/PaperDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/PaperDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             setPapers(response.data);
@@ -105,7 +105,7 @@ function Hodviewother(){
                         console.error('Error fetching Paper details:', error);
                     });
 
-                    axios.get(`http://localhost:5000/EventDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/EventDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);

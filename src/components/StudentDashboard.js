@@ -21,7 +21,7 @@ const StudentDashboard = () => {
   useEffect(() => {
     const getData = async () => {
       const body = { rollnumber };
-      const response = await fetch(`http://localhost:5000/student-get-data`, {
+      const response = await fetch(`https://be-quxr.onrender.com/student-get-data`, {
         method: "POST",
         headers: {
           "Content-type": "application/json"
@@ -39,7 +39,7 @@ const StudentDashboard = () => {
     const handleRoom = async (value) => {
       value.rollnumber = rollnumber;
       
-      const response = await fetch(`http://localhost:5000/student-room`, {
+      const response = await fetch(`https://be-quxr.onrender.com/student-room`, {
         method: "POST",
         headers: {
           "Content-type": "application/json"
@@ -58,7 +58,7 @@ const StudentDashboard = () => {
   useEffect(() => {
     const fetchResults = async() => {
       const body = {rollnumber, searchCode}
-      const response = await fetch(`http://localhost:5000/student-search-data`, {
+      const response = await fetch(`https://be-quxr.onrender.com/student-search-data`, {
         method: "POST",
         headers: {
           "Content-type": "application/json"

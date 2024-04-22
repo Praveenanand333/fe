@@ -13,7 +13,7 @@ function Navbarfun() {
     axios.defaults.withCredentials = true; 
     const handleLogout = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/logout', {
+            const response = await axios.get('https://be-quxr.onrender.com/logout', {
                 withCredentials: true // Ensure cookies are sent with the request
             });
             window.location.href = '/';

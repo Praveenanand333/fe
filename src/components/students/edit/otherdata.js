@@ -86,7 +86,7 @@ function EditStudentOther() {
         
                 userRef.current = localStorage.getItem('rollnumber')
                 console.log('from other data edit', userRef.current);
-                axios.get(`http://localhost:5000/InternshipDetails/${userRef.current}`)
+                axios.get(`https://be-quxr.onrender.com/InternshipDetails/${userRef.current}`)
                     .then(response => {
                         setInternships(response.data);
                         console.log('inernship data',internships);
@@ -94,21 +94,21 @@ function EditStudentOther() {
                     .catch(error => {
                         console.error('Error fetching Internship details:', error);
                     });
-                axios.get(`http://localhost:5000/ScholarshipDetails/${userRef.current}`)
+                axios.get(`https://be-quxr.onrender.com/ScholarshipDetails/${userRef.current}`)
                     .then(response => {
                         setScholarships(response.data);
                     })
                     .catch(error => {
                         console.error('Error fetching Scholarship details:', error);
                     });
-                    axios.get(`http://localhost:5000/ProjectDetails/${userRef.current}`)
+                    axios.get(`https://be-quxr.onrender.com/ProjectDetails/${userRef.current}`)
                     .then(response => {
                         setProjects(response.data);
                     })
                     .catch(error => {
                         console.error('Error fetching Scholarship details:', error);
                     });
-                    axios.get(`http://localhost:5000/SportsDetails/${userRef.current}`)
+                    axios.get(`https://be-quxr.onrender.com/SportsDetails/${userRef.current}`)
                     .then(response => {
                         if (response.data) {
                             console.log("sports",response.data);
@@ -122,7 +122,7 @@ function EditStudentOther() {
                     .catch(error => {
                         console.error('Error fetching Sports details:', error);
                     });
-                    axios.get(`http://localhost:5000/ExamDetails/${userRef.current}`)
+                    axios.get(`https://be-quxr.onrender.com/ExamDetails/${userRef.current}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -137,7 +137,7 @@ function EditStudentOther() {
                         console.error('Error fetching Exams details:', error);
                     });
 
-                    axios.get(`http://localhost:5000/PaperDetails/${userRef.current}`)
+                    axios.get(`https://be-quxr.onrender.com/PaperDetails/${userRef.current}`)
                     .then(response => {
                         if (response.data) {
                             setPapers(response.data);
@@ -153,7 +153,7 @@ function EditStudentOther() {
                         console.error('Error fetching Paper details:', error);
                     });
 
-                    axios.get(`http://localhost:5000/EventDetails/${userRef.current}`)
+                    axios.get(`https://be-quxr.onrender.com/EventDetails/${userRef.current}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -171,7 +171,7 @@ function EditStudentOther() {
     }, []);
 
     const handleDeleteInternship = (id) => {
-        const apiUrl = `http://localhost:5000/deleteInternship/${id}`;
+        const apiUrl = `https://be-quxr.onrender.com/deleteInternship/${id}`;
 
         axios.delete(apiUrl)
             .then(response => {
@@ -190,7 +190,7 @@ function EditStudentOther() {
     };
 
     const handleDeleteScholarship = (id) => {
-        const apiUrl = `http://localhost:5000/deleteScholarship/${id}`;
+        const apiUrl = `https://be-quxr.onrender.com/deleteScholarship/${id}`;
 
         axios.delete(apiUrl)
             .then(response => {
@@ -207,7 +207,7 @@ function EditStudentOther() {
             });
     };
     const handleDeleteProject = (id) => {
-        const apiUrl = `http://localhost:5000/deleteProject/${id}`;
+        const apiUrl = `https://be-quxr.onrender.com/deleteProject/${id}`;
 
         axios.delete(apiUrl)
             .then(response => {
@@ -224,7 +224,7 @@ function EditStudentOther() {
             });
     };
     const handleDeleteSports = (id) => {
-        const apiUrl = `http://localhost:5000/deleteSports/${id}`;
+        const apiUrl = `https://be-quxr.onrender.com/deleteSports/${id}`;
 
         axios.delete(apiUrl)
             .then(response => {
@@ -241,7 +241,7 @@ function EditStudentOther() {
             });
     };
     const handleDeletePapers = (id) => {
-        const apiUrl = `http://localhost:5000/deletePapers/${id}`;
+        const apiUrl = `https://be-quxr.onrender.com/deletePapers/${id}`;
 
         axios.delete(apiUrl)
             .then(response => {
@@ -258,7 +258,7 @@ function EditStudentOther() {
             });
     };
     const handleDeleteEvents = (id) => {
-        const apiUrl = `http://localhost:5000/deleteEvents/${id}`;
+        const apiUrl = `https://be-quxr.onrender.com/deleteEvents/${id}`;
 
         axios.delete(apiUrl)
             .then(response => {
@@ -320,7 +320,7 @@ function EditStudentOther() {
     const handleAddInternship = async() => {
         if(Object.values(internshipdata).every(value => value.trim() !== '')){
             try {
-                const apiUrl = `http://localhost:5000/addInternship/${userRef.current}`; // Replace with your API endpoint
+                const apiUrl = `https://be-quxr.onrender.com/addInternship/${userRef.current}`; // Replace with your API endpoint
                 const response = await axios.post(apiUrl, internshipdata);
                //alert('Internship data added successfully');
                 toast.success("Internship data added successfully",{
@@ -351,7 +351,7 @@ function EditStudentOther() {
     const handleAddScholarship = async () => {
         if(Object.values(scholarshipdata).every(value => value.trim() !== '')){
             try {
-                const apiUrl = `http://localhost:5000/addScholarship/${userRef.current}`; // Replace with your API endpoint
+                const apiUrl = `https://be-quxr.onrender.com/addScholarship/${userRef.current}`; // Replace with your API endpoint
                 const response = await axios.post(apiUrl, scholarshipdata);
                 //alert('Scholarship data added successfully');
                 toast.success("Scholarship data added successfully",{
@@ -381,7 +381,7 @@ function EditStudentOther() {
 const handleAddProject = async() => {
     if(Object.values(projectdata).every(value => value.trim() !== '')){
         try {
-            const apiUrl = `http://localhost:5000/addProject/${userRef.current}`; // Replace with your API endpoint
+            const apiUrl = `https://be-quxr.onrender.com/addProject/${userRef.current}`; // Replace with your API endpoint
             const response = await axios.post(apiUrl, projectdata);
             //alert('Project data added successfully');
             toast.success("Project data added successfully",{
@@ -410,7 +410,7 @@ const handleAddProject = async() => {
 const handleAddSports = async() => {
     if(Object.values(sportdata).every(value => value.trim() !== '')){
         try {
-            const apiUrl = `http://localhost:5000/addSport/${userRef.current}`; // Replace with your API endpoint
+            const apiUrl = `https://be-quxr.onrender.com/addSport/${userRef.current}`; // Replace with your API endpoint
             const response = await axios.post(apiUrl, sportdata);
             //alert('Sports data added successfully');
             toast.success("Sports data added successfully",{
@@ -439,7 +439,7 @@ const handleAddSports = async() => {
 const handleAddPapers = async() => {
     if(Object.values(paperdata).every(value => value.trim() !== '')){
         try {
-            const apiUrl = `http://localhost:5000/addPaper/${userRef.current}`; // Replace with your API endpoint
+            const apiUrl = `https://be-quxr.onrender.com/addPaper/${userRef.current}`; // Replace with your API endpoint
             const response = await axios.post(apiUrl, paperdata);
             //alert('Papers data added successfully');
             toast.success("Papers data added successfully",{
@@ -468,7 +468,7 @@ const handleAddPapers = async() => {
 const handleAddEvents = async() => {
     if(Object.values(eventdata).every(value => value.trim() !== '')){
         try {
-            const apiUrl = `http://localhost:5000/addEvent/${userRef.current}`; // Replace with your API endpoint
+            const apiUrl = `https://be-quxr.onrender.com/addEvent/${userRef.current}`; // Replace with your API endpoint
             const response = await axios.post(apiUrl, eventdata);
             //alert('Events data added successfully');
             toast.success("Events data added successfully",{

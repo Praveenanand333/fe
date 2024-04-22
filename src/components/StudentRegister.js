@@ -40,7 +40,7 @@ const StudentRegister = () => {
         try{
             
             const body = {rollnumber,username,password,email,year_of_joining};
-            const response = await fetch(`http://localhost:5000/registerstudent`,{
+            const response = await fetch(`https://be-quxr.onrender.com/registerstudent`,{
                 method:"POST",
                 headers: {
                     "Content-type":"application/json"

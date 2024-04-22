@@ -33,7 +33,7 @@ const StaffLogin = () => {
             autoClose:2500,
             position:'top-center'
         });
-        const response = await fetch(`http://localhost:5000/forgotpassword`,{
+        const response = await fetch(`https://be-quxr.onrender.com/forgotpassword`,{
             method:"POST",
             headers: {
                 "Content-Type": "application/json"
@@ -47,7 +47,7 @@ const StaffLogin = () => {
         e.preventDefault();
         try{
             const body = {email,password,teacherid};
-            const response = await fetch(`http://localhost:5000/loginstaff`,{
+            const response = await fetch(`https://be-quxr.onrender.com/loginstaff`,{
                 method:"POST",
                 headers: {
                     "Content-type":"application/json"

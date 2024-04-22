@@ -14,7 +14,7 @@ const AdminLogin = () => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         const body = {adminemail,password}
-        const response = await fetch(`http://localhost:5000/loginadmin`,{
+        const response = await fetch(`https://be-quxr.onrender.com/loginadmin`,{
             method:"POST",
             headers: {
                 "Content-type":"application/json"

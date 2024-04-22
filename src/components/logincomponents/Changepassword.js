@@ -16,7 +16,7 @@ function Changepassword() {
     useEffect(() => {
         const fetchUsername=async() => {
        try{
-        const username=await axios.get('http://localhost:5000/session');
+        const username=await axios.get('https://be-quxr.onrender.com/session');
         setUsername(username.data.username);
        }
        catch(err){
@@ -36,7 +36,7 @@ function Changepassword() {
     };
     const handleChangePassword = () => {
     
-        axios.post(`http://localhost:5000/changePassword/${username}`, { loginDetails })
+        axios.post(`https://be-quxr.onrender.com/changePassword/${username}`, { loginDetails })
             .then(response => {
                 navigate('/student');
             })

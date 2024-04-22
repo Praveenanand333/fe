@@ -15,7 +15,7 @@ const ResetPassword = () => {
             else{
                 const body = {token,role,newPassword}
                 
-                const response = await fetch(`http://localhost:5000/passwordreset`,{
+                const response = await fetch(`https://be-quxr.onrender.com/passwordreset`,{
                     method:"POST",
                     headers: {
                         "Content-Type": "application/json"
