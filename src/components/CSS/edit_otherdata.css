@@ -1,0 +1,121 @@
+/* Add colors */
+.view-form {
+    background-color: #f8f7f7;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .view-form1{
+    background-color: #f8f7f7;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.8%;
+  }
+  
+  .add-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.8%;
+  }
+  
+  .delete-btn:hover {
+    background-color: #da190b;
+  }
+  
+  /* Animations */
+  .view-form {
+    transition: transform 0.3s ease;
+  }
+  
+  .view-form:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Responsive styles */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  }
+  
+ /* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Heading styles */
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form input styles */
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  textarea {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Button styles */
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #555;
+    color: #fff;
+  }
+  
+  /* Responsive grid layout */
+  .view-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .view-form {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  

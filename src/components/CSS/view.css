@@ -1,0 +1,65 @@
+/* view.css */
+
+/* Container styles */
+.view-container {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+
+}
+
+/* Heading styles */
+.view-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Error message styles */
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Form styles */
+.view-form {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-size: larger;
+    text-align: justify;
+}
+
+.view-form p {
+    margin: 0;
+    text-align: justify;
+}
+
+.view-form p strong {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.view-field{
+    padding-top:10px;
+}
+ img {
+    max-width: 600px;
+    /* Adjust width as needed */
+    
+}
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+@media (max-width: 900px) {
+
+    .view-form{
+     
+    }
+}
+.prof-pic{
+    justify-content: center;
+}

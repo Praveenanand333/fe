@@ -1,0 +1,65 @@
+/* CustomCard.css */
+
+.custom-card-container {
+    display: flex;
+    flex-wrap:wrap ;
+    padding: 10px; /* Optional: Add some padding around the cards */
+  }
+  
+  .custom-card {
+    width: 31.5%;
+    margin: 10px; /* Add margin to create space between cards */
+    border: 1px solid #e0e0e0;
+    background-image: linear-gradient(to bottom, #accbee 0%, #e7f0fd 100%);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in;
+  }
+  
+  .card-image {
+    width: 25%;
+    height: 25%;
+    border-radius: 30px;
+    object-fit: cover;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .card-content {
+    display: flex;
+    clear: both;
+    margin-left: 15px;
+  }
+
+  
+  .card-description {
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .card-personal{
+    width: 100%;
+  }
+
+  .card-personal-text{
+    overflow: hidden;
+  }
+
+  .card-heading{
+    color: black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 25px;
+    text-transform:uppercase;
+    /* border-bottom: 1px solid black; */
+  }
+
+  .custom-card:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+  .card-title{
+    margin: 10px;
+  }

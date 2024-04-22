@@ -1,0 +1,87 @@
+.nav-link:hover {
+  background-color: #ffffff; 
+  color: #001B4B !important; 
+}
+.nav-link.active {
+  background-color: #ffffff; 
+  color: #001B4B !important; 
+}
+
+.navbar-toggler-icon {
+  color: #ffffff !important; 
+}
+
+.navbar-toggler-icon.active {
+  color: #001B4B !important; 
+}
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.brand-text {
+  font-size: 1.5rem; 
+
+}
+.brand-container{
+  
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-left: -50%; /* Adjust the margin to provide space between logo and other elements */
+}
+.me-auto {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  padding-left: 90px !important;
+}
+
+.navbar {
+  background-color: #097489 !important; 
+  padding:0 !important;
+  margin: 0 !important;/* Add !important to ensure the color takes precedence */
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-color: #ffffff; /* Bootstrap dark background color */
+}
+
+.navbar-nav {
+  width: 100% !important;
+
+}
+
+.nav-link {
+  color: #ffffff !important; /* Bootstrap dark text color */
+  font-size: 18px !important;
+  text-decoration: none !important;
+}
+
+.navbar-toggler {
+  border: none;
+}
+#responsive-navbar-nav{
+margin-left: 110% ;
+}
+
+@media (max-width: 900px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+.brand-container{
+  margin-left: 0;
+}
+  .navbar-nav .nav-link {
+    text-align: center;
+    padding: 10px;
+  }
+  #responsive-navbar-nav{
+    margin-left: -30%;
+      }
+      
+}
