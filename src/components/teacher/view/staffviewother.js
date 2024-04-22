@@ -13,7 +13,7 @@ function Staffviewother(){
     const [papers,setPapers]=useState(null);
     const [events,setEvents]=useState(null);
     const [errorMessage, setErrorMessage] = useState('');
-    axios.defaults.withCredentials = true; 
+   
     const handleInputChange = (event) => {
         setRollNumber(event.target.value);
     };

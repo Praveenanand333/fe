@@ -10,7 +10,7 @@ function Navbarfun() {
     const [clicked, setClicked] = useState(false);
     const navigate = useNavigate(); // Get access to history object
     const location = useLocation(); // Get access to location object
-    axios.defaults.withCredentials = true; 
+   
     const handleLogout = async () => {
         try {
             const response = await axios.get('https://be-quxr.onrender.com/logout', {

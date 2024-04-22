@@ -7,7 +7,7 @@ function ViewStudentPersonal() {
     const [errorMessage, setErrorMessage] = useState('');
     const [studentImage, setStudentImage] = useState('');
     const [error, setError] = useState('');
-    axios.defaults.withCredentials = true; 
+   
     useEffect(() => {
        
                 const username = localStorage.getItem('rollnumber')

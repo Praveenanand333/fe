@@ -57,7 +57,7 @@ function Data2(){
     const [exams,setExams]=useState(null);
     const [papers,setPapers]=useState(null);
     const [events,setEvents]=useState(null);
-    axios.defaults.withCredentials = true; 
+   
     const fetchData=()=>{
         axios.get(`https://be-quxr.onrender.com/studentDetails/${rollNumber}`)
         .then(response => {

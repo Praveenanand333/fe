@@ -23,7 +23,7 @@ function ViewStudentOther(){
     const [examsViewModal, setExamsViewModal] = useState(false);
     const [papersViewModal, setPapersViewModal] = useState(false);
     const [eventsViewModal, setEventsViewModal] = useState(false);
-    axios.defaults.withCredentials = true; 
+   
     useEffect(() => {
        
                 const username =localStorage.getItem('rollnumber');

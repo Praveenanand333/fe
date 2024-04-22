@@ -12,7 +12,7 @@ function Changepassword() {
             newPassword:''
         }
     )
-    axios.defaults.withCredentials = true; 
+   
     useEffect(() => {
         const fetchUsername=async() => {
        try{

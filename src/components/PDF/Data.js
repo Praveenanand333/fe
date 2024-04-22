@@ -96,7 +96,7 @@ function Data(){
     const [exams,setExams]=useState(null);
     const [papers,setPapers]=useState(null);
     const [events,setEvents]=useState(null);
-    axios.defaults.withCredentials = true; 
+   
     useEffect(() => {
        
                 const username = localStorage.getItem('rollnumber');
