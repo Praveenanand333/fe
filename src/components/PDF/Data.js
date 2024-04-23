@@ -14,7 +14,7 @@ function Data(){
      
             userRef.current = localStorage.getItem('rollnumber');
     
-            axios.get(`http://localhost:5000/basicacademic/${userRef.current}`)
+            axios.get(`https://be-quxr.onrender.com/basicacademic/${userRef.current}`)
               .then(response => {
                 if (response.data) {
                   setBasicAcademic(response.data);
@@ -36,8 +36,8 @@ function Data(){
             const gpaPromises = [];
     
             for (let sem = 1; sem <= basicacademic.CurrentSemester; sem++) {
-              marksPromises.push(axios.get(`http://localhost:5000/getsemestermarks/${userRef.current}/${sem}`));
-              gpaPromises.push(axios.get(`http://localhost:5000/getsemestergpa/${userRef.current}/${sem}`));
+              marksPromises.push(axios.get(`https://be-quxr.onrender.com/getsemestermarks/${userRef.current}/${sem}`));
+              gpaPromises.push(axios.get(`https://be-quxr.onrender.com/getsemestergpa/${userRef.current}/${sem}`));
             }
     
             const marksResponses = await Promise.all(marksPromises);
@@ -58,7 +58,7 @@ function Data(){
       
                 const username = localStorage.getItem('rollnumber');
                 
-                axios.get(`http://localhost:5000/studentDetails/${username}`)
+                axios.get(`https://be-quxr.onrender.com/studentDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                            
@@ -102,7 +102,7 @@ function Data(){
        
                 const username = localStorage.getItem('rollnumber');
                 
-                axios.get(`http://localhost:5000/InternshipDetails/${username}`)
+                axios.get(`https://be-quxr.onrender.com/InternshipDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -117,7 +117,7 @@ function Data(){
                         console.error('Error fetching Internship details:', error);
                     });
 
-                    axios.get(`http://localhost:5000/ScholarshipDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/ScholarshipDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -131,7 +131,7 @@ function Data(){
                     .catch(error => {
                         console.error('Error fetching Scholarship details:', error);
                     });
-                    axios.get(`http://localhost:5000/ProjectDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/ProjectDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -145,7 +145,7 @@ function Data(){
                     .catch(error => {
                         console.error('Error fetching Project details:', error);
                     });
-                    axios.get(`http://localhost:5000/SportsDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/SportsDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log("sports",response.data);
@@ -159,7 +159,7 @@ function Data(){
                     .catch(error => {
                         console.error('Error fetching Sports details:', error);
                     });
-                    axios.get(`http://localhost:5000/ExamDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/ExamDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -174,7 +174,7 @@ function Data(){
                         console.error('Error fetching Exams details:', error);
                     });
 
-                    axios.get(`http://localhost:5000/PaperDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/PaperDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             setPapers(response.data);
@@ -188,7 +188,7 @@ function Data(){
                         console.error('Error fetching Paper details:', error);
                     });
 
-                    axios.get(`http://localhost:5000/EventDetails/${username}`)
+                    axios.get(`https://be-quxr.onrender.com/EventDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -213,7 +213,7 @@ function Data(){
                 {studentDetails && (
                     <>
                     <div className='img-container'>
-                    <img className='prof-pic' src={`http://localhost:5000/getImage/${studentDetails.RollNumber}`} alt='img'/>
+                    <img className='prof-pic' src={`https://be-quxr.onrender.com/getImage/${studentDetails.RollNumber}`} alt='img'/>
                     </div>
                    
                     <div className='view-form1'>

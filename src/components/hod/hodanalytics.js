@@ -23,7 +23,7 @@ function Hodanalytics() {
     const handlestaffclick=(teacherId) => {
         setstaffclicked(true);
         setselectedteacherid(teacherId);
-        axios.get(`http://localhost:5000/getstaffsubjects/${teacherId}`)
+        axios.get(`https://be-quxr.onrender.com/getstaffsubjects/${teacherId}`)
         .then((response) =>{
          setstaffsubjects(response.data);
         })
@@ -33,7 +33,7 @@ function Hodanalytics() {
     }
     const subjectclick=(subjectId)=>{
         setselectedsubjectid(subjectId);
-axios.get(`http://localhost:5000/getstudentlist/${selectedteacherid}/${subjectId}`)
+axios.get(`https://be-quxr.onrender.com/getstudentlist/${selectedteacherid}/${subjectId}`)
 .then((response)=>{
 setstudentlist(response.data);
 })
@@ -42,7 +42,7 @@ setstudentlist(response.data);
 })
     }
     useEffect(() => {
-       axios.get(`http://localhost:5000/getstafflist`)
+       axios.get(`https://be-quxr.onrender.com/getstafflist`)
        .then((response) =>{
         setStafflist(response.data);
 
@@ -50,7 +50,7 @@ setstudentlist(response.data);
        .catch((error) => {
             console.log(error);
         });
-            axios.get(`http://localhost:5000/getgpa/${rollNumber}`)
+            axios.get(`https://be-quxr.onrender.com/getgpa/${rollNumber}`)
             .then(response => {
                 if (response.data) {
                     setGpa(response.data);
@@ -72,7 +72,7 @@ setstudentlist(response.data);
         const selectedSemester = event.target.value;
         setSem(selectedSemester);
 
-        axios.get(`http://localhost:5000/basicacademic/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/basicacademic/${rollNumber}`)
             .then(response => {
                 if (response.data) {
                     setbasicacademic(response.data);
@@ -85,7 +85,7 @@ setstudentlist(response.data);
                 console.log(error);
             });
 
-        axios.get(`http://localhost:5000/getsemestermarks/${rollNumber}/${selectedSemester}`)
+        axios.get(`https://be-quxr.onrender.com/getsemestermarks/${rollNumber}/${selectedSemester}`)
             .then(response => {
                 if (response.data) {
                     console.log("marks=",response.data);

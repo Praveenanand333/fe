@@ -21,8 +21,8 @@ function Data2(){
             const gpaPromises = [];
     
             for (let sem = 1; sem <= basicacademic.CurrentSemester; sem++) {
-              marksPromises.push(axios.get(`http://localhost:5000/getsemestermarks/${rollNumber}/${sem}`));
-              gpaPromises.push(axios.get(`http://localhost:5000/getsemestergpa/${rollNumber}/${sem}`));
+              marksPromises.push(axios.get(`https://be-quxr.onrender.com/getsemestermarks/${rollNumber}/${sem}`));
+              gpaPromises.push(axios.get(`https://be-quxr.onrender.com/getsemestergpa/${rollNumber}/${sem}`));
             }
     
             const marksResponses = await Promise.all(marksPromises);
@@ -59,7 +59,7 @@ function Data2(){
     const [events,setEvents]=useState(null);
     
     const fetchData=()=>{
-        axios.get(`http://localhost:5000/studentDetails/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/studentDetails/${rollNumber}`)
         .then(response => {
             if (response.data) {
                
@@ -77,7 +77,7 @@ function Data2(){
         .catch(error => {
             console.error('Error fetching student details:', error);
         });
-        axios.get(`http://localhost:5000/basicacademic/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/basicacademic/${rollNumber}`)
         .then(response => {
           if (response.data) {
             setBasicAcademic(response.data);
@@ -88,7 +88,7 @@ function Data2(){
         .catch(error => {
           console.log(error);
         });
-        axios.get(`http://localhost:5000/InternshipDetails/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/InternshipDetails/${rollNumber}`)
         .then(response => {
             if (response.data) {
                 console.log(response.data);
@@ -103,7 +103,7 @@ function Data2(){
             console.error('Error fetching Internship details:', error);
         });
 
-        axios.get(`http://localhost:5000/ScholarshipDetails/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/ScholarshipDetails/${rollNumber}`)
         .then(response => {
             if (response.data) {
                 console.log(response.data);
@@ -117,7 +117,7 @@ function Data2(){
         .catch(error => {
             console.error('Error fetching Scholarship details:', error);
         });
-        axios.get(`http://localhost:5000/ProjectDetails/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/ProjectDetails/${rollNumber}`)
         .then(response => {
             if (response.data) {
                 console.log(response.data);
@@ -131,7 +131,7 @@ function Data2(){
         .catch(error => {
             console.error('Error fetching Project details:', error);
         });
-        axios.get(`http://localhost:5000/SportsDetails/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/SportsDetails/${rollNumber}`)
         .then(response => {
             if (response.data) {
                 console.log("sports",response.data);
@@ -145,7 +145,7 @@ function Data2(){
         .catch(error => {
             console.error('Error fetching Sports details:', error);
         });
-        axios.get(`http://localhost:5000/ExamDetails/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/ExamDetails/${rollNumber}`)
         .then(response => {
             if (response.data) {
                 console.log(response.data);
@@ -160,7 +160,7 @@ function Data2(){
             console.error('Error fetching Exams details:', error);
         });
 
-        axios.get(`http://localhost:5000/PaperDetails/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/PaperDetails/${rollNumber}`)
         .then(response => {
             if (response.data) {
                 setPapers(response.data);
@@ -174,7 +174,7 @@ function Data2(){
             console.error('Error fetching Paper details:', error);
         });
 
-        axios.get(`http://localhost:5000/EventDetails/${rollNumber}`)
+        axios.get(`https://be-quxr.onrender.com/EventDetails/${rollNumber}`)
         .then(response => {
             if (response.data) {
                 console.log(response.data);
@@ -190,7 +190,7 @@ function Data2(){
         });
     }
     useEffect(() => {
-        axios.get('http://localhost:5000/session')
+        axios.get('https://be-quxr.onrender.com/session')
         .then(response => {
             userRef.current = rollNumber;
             if(rollNumber){
@@ -221,7 +221,7 @@ function Data2(){
                 {studentDetails && (
                     <>
                     <div className='img-container'>
-                    <img className='prof-pic' src={`http://localhost:5000/getImage/${studentDetails.RollNumber}`} alt='img'/>
+                    <img className='prof-pic' src={`https://be-quxr.onrender.com/getImage/${studentDetails.RollNumber}`} alt='img'/>
                     </div>
                    
                     <div className='view-form'>
