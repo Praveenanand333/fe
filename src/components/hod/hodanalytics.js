@@ -23,7 +23,7 @@ function Hodanalytics() {
     const handlestaffclick=(teacherId) => {
         setstaffclicked(true);
         setselectedteacherid(teacherId);
-        axios.get(`https://be-quxr.onrender.com/getstaffsubjects/${teacherId}`)
+        axios.get(`http://localhost:5000/getstaffsubjects/${teacherId}`)
         .then((response) =>{
          setstaffsubjects(response.data);
         })
@@ -33,7 +33,7 @@ function Hodanalytics() {
     }
     const subjectclick=(subjectId)=>{
         setselectedsubjectid(subjectId);
-axios.get(`https://be-quxr.onrender.com/getstudentlist/${selectedteacherid}/${subjectId}`)
+axios.get(`http://localhost:5000/getstudentlist/${selectedteacherid}/${subjectId}`)
 .then((response)=>{
 setstudentlist(response.data);
 })
@@ -42,7 +42,7 @@ setstudentlist(response.data);
 })
     }
     useEffect(() => {
-       axios.get(`https://be-quxr.onrender.com/getstafflist`)
+       axios.get(`http://localhost:5000/getstafflist`)
        .then((response) =>{
         setStafflist(response.data);
 
@@ -50,7 +50,7 @@ setstudentlist(response.data);
        .catch((error) => {
             console.log(error);
         });
-            axios.get(`https://be-quxr.onrender.com/getgpa/${rollNumber}`)
+            axios.get(`http://localhost:5000/getgpa/${rollNumber}`)
             .then(response => {
                 if (response.data) {
                     setGpa(response.data);
@@ -72,7 +72,7 @@ setstudentlist(response.data);
         const selectedSemester = event.target.value;
         setSem(selectedSemester);
 
-        axios.get(`https://be-quxr.onrender.com/basicacademic/${rollNumber}`)
+        axios.get(`http://localhost:5000/basicacademic/${rollNumber}`)
             .then(response => {
                 if (response.data) {
                     setbasicacademic(response.data);
@@ -85,7 +85,7 @@ setstudentlist(response.data);
                 console.log(error);
             });
 
-        axios.get(`https://be-quxr.onrender.com/getsemestermarks/${rollNumber}/${selectedSemester}`)
+        axios.get(`http://localhost:5000/getsemestermarks/${rollNumber}/${selectedSemester}`)
             .then(response => {
                 if (response.data) {
                     console.log("marks=",response.data);
@@ -163,6 +163,15 @@ setstudentlist(response.data);
                     legend: {
                         display: true
                     }
+                },
+                scales: {
+                    y: {
+                        min: 6, // Set minimum value
+                    max: 10, // Set maximum value
+                    ticks: {
+                        stepSize: 0.5 // Set step size
+                    }
+                    }
                 }
             }
         });
@@ -193,10 +202,10 @@ setstudentlist(response.data);
                 </select>
                 <p>Semester: {sem}</p>
             </div>
-            <div>
+            <div style={{  height: '300px' }}>
                 <canvas id="marksChart"></canvas>
             </div>
-            <div>
+            <div style={{  height: '300px' }}>
                 <canvas id="gpaChart"></canvas>
             </div>
             {stafflist && !staffclicked && <h2>Staff Details</h2>}

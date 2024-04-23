@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import styles from '../CSS/view_academicdata.css'
 function Data(){
     const [studentDetails, setStudentDetails] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
@@ -13,7 +14,7 @@ function Data(){
      
             userRef.current = localStorage.getItem('rollnumber');
     
-            axios.get(`https://be-quxr.onrender.com/basicacademic/${userRef.current}`)
+            axios.get(`http://localhost:5000/basicacademic/${userRef.current}`)
               .then(response => {
                 if (response.data) {
                   setBasicAcademic(response.data);
@@ -35,8 +36,8 @@ function Data(){
             const gpaPromises = [];
     
             for (let sem = 1; sem <= basicacademic.CurrentSemester; sem++) {
-              marksPromises.push(axios.get(`https://be-quxr.onrender.com/getsemestermarks/${userRef.current}/${sem}`));
-              gpaPromises.push(axios.get(`https://be-quxr.onrender.com/getsemestergpa/${userRef.current}/${sem}`));
+              marksPromises.push(axios.get(`http://localhost:5000/getsemestermarks/${userRef.current}/${sem}`));
+              gpaPromises.push(axios.get(`http://localhost:5000/getsemestergpa/${userRef.current}/${sem}`));
             }
     
             const marksResponses = await Promise.all(marksPromises);
@@ -57,7 +58,7 @@ function Data(){
       
                 const username = localStorage.getItem('rollnumber');
                 
-                axios.get(`https://be-quxr.onrender.com/studentDetails/${username}`)
+                axios.get(`http://localhost:5000/studentDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                            
@@ -96,12 +97,12 @@ function Data(){
     const [exams,setExams]=useState(null);
     const [papers,setPapers]=useState(null);
     const [events,setEvents]=useState(null);
-   
+    
     useEffect(() => {
        
                 const username = localStorage.getItem('rollnumber');
                 
-                axios.get(`https://be-quxr.onrender.com/InternshipDetails/${username}`)
+                axios.get(`http://localhost:5000/InternshipDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -116,7 +117,7 @@ function Data(){
                         console.error('Error fetching Internship details:', error);
                     });
 
-                    axios.get(`https://be-quxr.onrender.com/ScholarshipDetails/${username}`)
+                    axios.get(`http://localhost:5000/ScholarshipDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -130,7 +131,7 @@ function Data(){
                     .catch(error => {
                         console.error('Error fetching Scholarship details:', error);
                     });
-                    axios.get(`https://be-quxr.onrender.com/ProjectDetails/${username}`)
+                    axios.get(`http://localhost:5000/ProjectDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -144,7 +145,7 @@ function Data(){
                     .catch(error => {
                         console.error('Error fetching Project details:', error);
                     });
-                    axios.get(`https://be-quxr.onrender.com/SportsDetails/${username}`)
+                    axios.get(`http://localhost:5000/SportsDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log("sports",response.data);
@@ -158,7 +159,7 @@ function Data(){
                     .catch(error => {
                         console.error('Error fetching Sports details:', error);
                     });
-                    axios.get(`https://be-quxr.onrender.com/ExamDetails/${username}`)
+                    axios.get(`http://localhost:5000/ExamDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -173,7 +174,7 @@ function Data(){
                         console.error('Error fetching Exams details:', error);
                     });
 
-                    axios.get(`https://be-quxr.onrender.com/PaperDetails/${username}`)
+                    axios.get(`http://localhost:5000/PaperDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             setPapers(response.data);
@@ -187,7 +188,7 @@ function Data(){
                         console.error('Error fetching Paper details:', error);
                     });
 
-                    axios.get(`https://be-quxr.onrender.com/EventDetails/${username}`)
+                    axios.get(`http://localhost:5000/EventDetails/${username}`)
                     .then(response => {
                         if (response.data) {
                             console.log(response.data);
@@ -205,15 +206,14 @@ function Data(){
     }, []);
     return(
         <div>
-           <center> <h2>Student Details Report</h2></center>
-           <div className="persoanl-details">
+            <div className="persoanl-details">
            <div className='view-container'>
                 <h2 className='view-heading'>Student Personal Details</h2>
                 {errorMessage && <p>{errorMessage}</p>}
                 {studentDetails && (
                     <>
                     <div className='img-container'>
-                    <img className='prof-pic' src={`https://be-quxr.onrender.com/getImage/${studentDetails.RollNumber}`} alt='img'/>
+                    <img className='prof-pic' src={`http://localhost:5000/getImage/${studentDetails.RollNumber}`} alt='img'/>
                     </div>
                    
                     <div className='view-form1'>
@@ -236,18 +236,44 @@ function Data(){
             </div>
 
            </div>
-           <div className="Academic-details">
-           {basicacademic && 
-        <div className='basic-detail'>
-          <p>Current Semester : {basicacademic.CurrentSemester}</p>
-          <p>Tenth Marks : {basicacademic.TenthMarks}</p>
-          <p>Higher Secondary Marks : {basicacademic.HigherSecondaryMarks}</p>
-        </div>
-      }
+           <div id="student-view-academic">
+           {basicacademic &&<div className='basic-detail'>
+
+            <div className='school-table-container'>
+            <table border={'0'} className='school-table'>
+
+                        <tr>
+                            <td colSpan={'4'}>
+                                <h2>SCHOOL EDUCATION DETAILS</h2>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td id='td1'>
+                                <p className='topic'>Secondary Percentage : {basicacademic.TenthMarks}%</p><br/>
+                            </td>
+                            
+                            <td id='td2'>
+                                <p className='topic'>Higher Secondary Percentage : {basicacademic.HigherSecondaryMarks}%</p><br/>
+                                
+                            </td>
+                            <td id='td3'>
+                                <p className='topic'>Cutoff Marks : {basicacademic.Cutoff}</p><br/>
+                            </td>
+                            <td id='td4'>
+                                <p className='topic'>Current Semester : {basicacademic.CurrentSemester}</p><br/>
+                            </td>
+
+                            
+                        </tr>
+                    </table>
+            
+            </div>
+            </div>}
       <div>
         <h2>Marks Table</h2>
         {marksData.length > 0 && 
-          <table className='marks-table1'>
+          <table className='marks-table'>
             <thead>
               <tr>
                 <th>Semester</th>
@@ -270,7 +296,11 @@ function Data(){
             </tbody>
           </table>
         }
-        {Object.keys(gpaData).length > 0 && 
+        
+      </div>
+
+           </div>
+           {Object.keys(gpaData).length > 0 && 
           <div className='gpa-show'>
             <h2>Semester GPA</h2>
             {gpaData.map((gpa, sem) => (
@@ -278,13 +308,10 @@ function Data(){
             ))}
           </div>
         }
-      </div>
-
-           </div>
            <div className="other-details">
 
            {internships && internships.map((internship, index) => (
-    <div className='view-form1' key={index}>
+    <div className='view-form' key={index}>
         <h2>Internship Details {index + 1}</h2>
         <p className='view-field'><strong>Roll Number:</strong> {internship.roll_number}</p>
         <p className='view-field'><strong>Employer:</strong> {internship.employer_name}</p>
@@ -299,7 +326,7 @@ function Data(){
 ))}
         {!Scholarships&&<h3 className='nodatamsg'>No Scholarshp details found</h3>}
 {Scholarships && Scholarships.map((Scholarship, index) => (
-    <div className='view-form1' key={index}>
+    <div className='view-form' key={index}>
         <h2>Scholarship Details {index + 1}</h2>
         <p className='view-field'><strong>Scholarship Provider:</strong> {Scholarship.ScholarshipProvider}</p>
         <p className='view-field'><strong>Amount:</strong> {Scholarship.amount}</p>
@@ -308,7 +335,7 @@ function Data(){
 ))}
 
 {projects && projects.map((project, index) => (
-    <div className='view-form1' key={index}>
+    <div className='view-form' key={index}>
         <h2>Project Details {index + 1}</h2>
         <p className='view-field'><strong>Project Name:</strong> {project.title}</p>
         <p className='view-field'><strong>Guide:</strong> {project.guide}</p>
@@ -319,7 +346,7 @@ function Data(){
             {!projects && <h3 className='nodatamsg'>No Project details found</h3>}
 
             {sports && sports.map((sport, index) => (
-    <div className='view-form1' key={index}>
+    <div className='view-form' key={index}>
         <h2>Sports Details {index + 1}</h2>
         <p className='view-field'><strong>Event Name:</strong> {sport.event_name}</p>
         <p className='view-field'><strong>Award:</strong> {sport.award}</p>
@@ -327,7 +354,7 @@ function Data(){
 ))}
             {!sports &&<h3 className='nodatamsg'>No sports details found</h3>}
             {exams && (
-    <div className='view-form1'>
+    <div className='view-form'>
         <h2>Exams Attended</h2>
         <p className='view-field'><strong>GATE Score:</strong> {exams.GATE_score}</p>
         <p className='view-field'><strong>GRE Score:</strong> {exams.GRE_score}</p>
@@ -341,7 +368,7 @@ function Data(){
 
              
        {papers && papers.map((paper, index) => (
-        <div className='view-form1' key={index}>
+        <div className='view-form' key={index}>
             <h2>Papers Presented {index + 1}</h2>
             <p className='view-field'><strong>Title:</strong> {paper.title}</p>
             <p className='view-field'><strong>Journal:</strong> {paper.journal}</p>
@@ -352,7 +379,7 @@ function Data(){
     ))}
             {!papers &&<h3 className='nodatamsg'>No paper details found</h3>}
             {events && events.map((event, index) => (
-    <div className='view-form1' key={index}>
+    <div className='view-form' key={index}>
         <h2>Events Details {index + 1}</h2>
         <p className='view-field'><strong>Event Name:</strong> {event.event_name}</p>
         <p className='view-field'><strong>Institution Name:</strong> {event.institution}</p>
